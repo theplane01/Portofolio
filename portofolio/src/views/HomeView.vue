@@ -43,11 +43,11 @@
     <!-- Stats Section -->
     <div class="grid grid-cols-3 gap-px bg-dark-border">
       <div class="bg-panel p-8 text-center">
-        <div class="text-4xl font-bold text-chalk mb-2">47<span class="text-acid">+</span></div>
+        <div class="text-4xl font-bold text-chalk mb-2">7<span class="text-acid">+</span></div>
         <div class="font-mono text-xs text-silver tracking-widest uppercase">Projects</div>
       </div>
       <div class="bg-panel p-8 text-center">
-        <div class="text-4xl font-bold text-chalk mb-2">5<span class="text-acid">yr</span></div>
+        <div class="text-4xl font-bold text-chalk mb-2">2<span class="text-acid">yr</span></div>
         <div class="font-mono text-xs text-silver tracking-widest uppercase">Experience</div>
       </div>
       <div class="bg-panel p-8 text-center">
@@ -138,7 +138,7 @@
         <div class="font-mono text-xs text-silver tracking-widest uppercase mt-1">Projects</div>
       </div>
       <div class="bg-panel p-4 text-center">
-        <div class="text-2xl font-bold text-chalk"><span id="c2">5</span><span class="text-acid">yr</span></div>
+        <div class="text-2xl font-bold text-chalk"><span id="c2">2</span><span class="text-acid">yr</span></div>
         <div class="font-mono text-xs text-silver tracking-widest uppercase mt-1">Experience</div>
       </div>
       <div class="bg-panel p-4 text-center">
