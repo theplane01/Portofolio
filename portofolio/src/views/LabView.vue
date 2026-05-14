@@ -9,74 +9,20 @@
     </div>
 
     <!-- Lab Hero -->
-    <div class="bg-gradient-to-br from-[#0a0f1a] to-[#12101e] border border-acid/15 rounded-2xl p-6 mb-6 relative overflow-hidden reveal">
-      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-acid to-transparent"></div>
-      <div class="inline-flex items-center gap-2 px-2 py-1.5 bg-acid/10 border border-acid/20 rounded-full mb-3">
-        <span class="w-1 h-1 bg-acid rounded-full"></span>
-        <span class="font-mono text-xs font-bold text-acid tracking-widest uppercase">Live</span>
-      </div>
-      <h2 class="text-2xl font-bold text-chalk mb-2">AI Assistant Terminal</h2>
-      <p class="text-sm text-white/42">An experimental conversational interface powered by Claude AI. Ask about my work, vision, or design philosophy.</p>
-    </div>
-
-    <!-- Terminal Chat -->
-    <div class="bg-black/50 border border-acid/12 rounded-xl overflow-hidden mb-6 reveal flex flex-col">
-      <div class="bg-white/4 border-b border-white/6 px-4 py-3 flex items-center gap-2">
-        <span class="w-2 h-2 bg-[#ff5f57] rounded-full"></span>
-        <span class="w-2 h-2 bg-[#febc2e] rounded-full"></span>
-        <span class="w-2 h-2 bg-[#28c840] rounded-full"></span>
-        <span class="font-mono text-xs text-white/25 ml-2">terminal.ai</span>
-      </div>
-      
-      <!-- Messages Container -->
-      <div class="flex-1 overflow-y-auto max-h-96 p-4 font-mono text-xs leading-relaxed space-y-3" ref="messagesContainer">
-        <div v-for="(msg, idx) in messages" :key="idx" :class="[
-          'animate-fade-up',
-          msg.role === 'user' ? 'text-acid' : 'text-white/70'
-        ]">
-          <div v-if="msg.role === 'user'" class="text-white/25">
-            $ {{ msg.content }}
-          </div>
-          <div v-else class="whitespace-pre-wrap text-white/70">
-            {{ msg.content }}
-          </div>
+    <div class="bg-gradient-to-br from-acid/8 to-ember/5 border border-acid/20 rounded-2xl p-8 mb-8 relative overflow-hidden reveal">
+      <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-acid to-transparent opacity-50"></div>
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-acid/5 rounded-full blur-3xl"></div>
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-acid/10 border border-acid/30 rounded-full mb-4">
+          <span class="w-1.5 h-1.5 bg-acid rounded-full animate-pulse"></span>
+          <span class="font-mono text-xs font-bold text-acid tracking-widest uppercase">Lab active</span>
         </div>
-        
-        <!-- Loading state -->
-        <div v-if="loading" class="text-white/50 animate-pulse">
-          <span class="inline-block w-1.5 h-3 bg-acid animate-blink"></span>
-        </div>
-        
-        <!-- Prompt when no messages -->
-        <div v-if="messages.length === 0" class="text-white/50">
-          $ <span class="inline-block w-1.5 h-3 bg-acid ml-1 animate-blink"></span>
-        </div>
-      </div>
-
-      <!-- Input Form -->
-      <div class="border-t border-white/6 p-4 bg-white/2">
-        <form @submit.prevent="sendMessage" class="flex gap-2">
-          <span class="text-white/25">$</span>
-          <input
-            v-model="userInput"
-            type="text"
-            placeholder="Ask about my work, skills, or vision..."
-            class="flex-1 bg-transparent text-acid outline-none placeholder-white/20 font-mono text-xs"
-            :disabled="loading"
-            @keydown.enter="sendMessage"
-          />
-          <button
-            type="submit"
-            :disabled="loading || !userInput.trim()"
-            class="text-white/25 hover:text-acid transition-colors disabled:opacity-50"
-          >
-            →
-          </button>
-        </form>
+        <h2 class="text-2xl font-bold text-chalk mb-3">Where creativity meets code.</h2>
+        <p class="text-sm text-white/60 max-w-2xl leading-relaxed">
+          A playground for experimental ideas. Building interactive prototypes, generative systems, and pushing the boundaries of what's possible on the web.
+        </p>
       </div>
     </div>
-
-    <!-- Active Builds -->
     <div>
       <div class="flex items-center gap-2 mb-4">
         <span class="w-4 h-px bg-ember"></span>
@@ -111,76 +57,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, nextTick } from 'vue';
-
-const messages = ref([
-  {
-    role: 'assistant',
-    content: `Welcome to Void AI Terminal. I'm Vourel's AI assistant powered by Groq.
-
-I can help you learn about:
-• My work and projects (UI/UX, web development, AI integration)
-• My skills and tools (React, TypeScript, Three.js, Figma)
-• My philosophy on design and creativity
-
-Try asking: "What's your latest project?" or "Tell me about your AI experiments"`
-  }
-]);
-const userInput = ref('');
-const loading = ref(false);
-const messagesContainer = ref(null);
-
-const sendMessage = async () => {
-  if (!userInput.value.trim() || loading.value) return;
-
-  const userMessage = userInput.value.trim();
-  messages.value.push({
-    role: 'user',
-    content: userMessage
-  });
-  userInput.value = '';
-  loading.value = true;
-
-  await nextTick();
-  scrollToBottom();
-
-  try {
-    const response = await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        messages: messages.value
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    messages.value.push({
-      role: 'assistant',
-      content: data.content
-    });
-  } catch (error) {
-    messages.value.push({
-      role: 'assistant',
-      content: `Error: ${error.message}\n\nMake sure GROQ_API_KEY is set in your Vercel environment variables.`
-    });
-  } finally {
-    loading.value = false;
-    await nextTick();
-    scrollToBottom();
-  }
-};
-
-const scrollToBottom = () => {
-  setTimeout(() => {
-    if (messagesContainer.value) {
-      messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight;
-    }
-  }, 0);
-};
+import { onMounted } from 'vue';
 
 const experiments = [
   {
@@ -189,7 +66,7 @@ const experiments = [
     title: 'AI-Powered UI Components',
     status: 'Live',
     statusClass: 'bg-acid/10 text-acid border border-acid/20',
-    desc: 'Building a library of UI components that adapt and respond to user behavior using Claude API.',
+    desc: 'Building a library of UI components that adapt and respond to user behavior using advanced APIs.',
   },
   {
     id: 2,
@@ -236,13 +113,3 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 1s step-start infinite;
-}
-</style>
