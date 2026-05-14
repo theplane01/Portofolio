@@ -116,7 +116,7 @@ import { onMounted, ref, nextTick } from 'vue';
 const messages = ref([
   {
     role: 'assistant',
-    content: `Welcome to the AI Terminal. I'm Vourel's AI assistant powered by Claude.
+    content: `Welcome to Void AI Terminal. I'm Vourel's AI assistant powered by Groq.
 
 I can help you learn about:
 • My work and projects (UI/UX, web development, AI integration)
@@ -165,7 +165,7 @@ const sendMessage = async () => {
   } catch (error) {
     messages.value.push({
       role: 'assistant',
-      content: `Error: ${error.message}\n\nMake sure ANTHROPIC_API_KEY is set in your Vercel environment variables.`
+      content: `Error: ${error.message}\n\nMake sure GROQ_API_KEY is set in your Vercel environment variables.`
     });
   } finally {
     loading.value = false;

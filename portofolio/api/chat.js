@@ -15,10 +15,10 @@ export default async function handler(req, res) {
   }
 
   const { messages } = req.body;
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
-    return res.status(500).json({ error: 'API key not configured' });
+    return res.status(500).json({ error: 'GROQ_API_KEY not configured' });
   }
 
   if (!messages || !Array.isArray(messages)) {
@@ -26,17 +26,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'x-api-key': apiKey,
+        'Authorization': `Bearer ${apiKey}`,
         'content-type': 'application/json',
-        'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-3-5-sonnet-20241022',
+        model: 'mixtral-8x7b-32768',
         max_tokens: 1024,
-        system: `You are Vourel Oktofit Avin's AI assistant. You're knowledgeable about:
+        system: `You are Void AI, Vourel Oktofit Avin's AI assistant. You're knowledgeable about:
 - His work: UI/UX design, creative coding, AI integration, 3D web development
 - His skills: React, TypeScript, Three.js, GSAP, Figma, and more
 - His philosophy: "I build interfaces that don't apologize for existing"
@@ -52,12 +51,12 @@ Be conversational, insightful, and showcase Vourel's personality and work. Keep 
 
     if (!response.ok) {
       const error = await response.json();
-      console.error('Claude API error:', error);
+      console.error('Groq API error:', error);
       return res.status(response.status).json({ error: error.error?.message || 'API error' });
     }
 
     const data = await response.json();
-    const assistantMessage = data.content[0].text;
+    const assistantMessage = data.choices[0].message.content;
 
     return res.status(200).json({
       content: assistantMessage,
