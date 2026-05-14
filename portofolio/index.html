@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Vourel Oktofit Avin - Designer × Developer × Experimenter">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0a0a0f',
+              chalk: '#f4f1eb',
+              acid: '#c8ff00',
+              ember: '#ff4d1c',
+              glacier: '#7eb8ff',
+              void: '#0e0e16',
+              panel: '#14141e',
+              silver: '#888896',
+              'dark-border': 'rgba(255,255,255,.08)',
+            },
+            fontFamily: {
+              display: ['Syne', 'sans-serif'],
+              serif: ['Instrument Serif', 'serif'],
+              mono: ['Space Mono', 'monospace'],
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s ease-out',
+              'float-orb': 'floatOrb 9s ease-in-out infinite',
+              'marquee': 'marquee 16s linear infinite',
+              'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(16px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              floatOrb: {
+                '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                '33%': { transform: 'translate(12px, -18px) scale(1.05)' },
+                '66%': { transform: 'translate(-10px, 10px) scale(0.96)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes floatOrb {
+        0%, 100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(12px, -18px) scale(1.05);
+        }
+        66% {
+          transform: translate(-10px, 10px) scale(0.96);
+        }
+      }
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+    </style>
+    <title>Vourel Oktofit Avin — Designer × Developer</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
