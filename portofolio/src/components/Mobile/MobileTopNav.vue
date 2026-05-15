@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-7 left-0 right-0 z-40 h-16 bg-void/92 backdrop-blur-xl border-b border-dark-border flex items-center justify-between px-5">
+  <div class="fixed top-0 left-0 right-0 z-40 h-16 bg-void/92 backdrop-blur-xl border-b border-dark-border flex items-center justify-between px-5">
     <div class="flex items-center gap-2.5">
       <div class="w-8 h-8 bg-gradient-to-br from-ember to-acid rounded-lg flex items-center justify-center text-ink text-xs font-bold flex-shrink-0">
         V

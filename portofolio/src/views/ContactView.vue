@@ -12,34 +12,34 @@
       </p>
       
       <div class="space-y-4">
-        <a href="mailto:hello@vourel.com" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
+        <a href="mailto:oktofitavinvourel@gmail.com" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-ember/20 rounded-lg flex items-center justify-center text-lg">📧</div>
             <div>
               <div class="font-bold">Email</div>
-              <div class="font-mono text-xs text-silver">hello@vourel.com</div>
+              <div class="font-mono text-xs text-silver">oktofitavinvourel@gmail.com</div>
             </div>
           </div>
           <span class="text-lg opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
         </a>
 
-        <a href="https://github.com/vourel" target="_blank" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
+        <a href="https://github.com/theplane01" target="_blank" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-lg">🔗</div>
             <div>
               <div class="font-bold">GitHub</div>
-              <div class="font-mono text-xs text-silver">github.com/vourel</div>
+              <div class="font-mono text-xs text-silver">github.com/theplane01</div>
             </div>
           </div>
           <span class="text-lg opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
         </a>
 
-        <a href="https://linkedin.com/in/vourel" target="_blank" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
+        <a href="https://www.linkedin.com/in/vourel-oktofit-729b96337" target="_blank" class="flex items-center justify-between p-6 bg-void text-chalk border border-white/10 rounded-2xl hover:border-acid hover:bg-opacity-50 transition-all group">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-glacier/20 rounded-lg flex items-center justify-center text-lg">💼</div>
             <div>
               <div class="font-bold">LinkedIn</div>
-              <div class="font-mono text-xs text-silver">linkedin.com/in/vourel</div>
+              <div class="font-mono text-xs text-silver">linkedin.com/in/vourel-oktofit-729b96337</div>
             </div>
           </div>
           <span class="text-lg opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
@@ -63,34 +63,34 @@
     </div>
 
     <div class="space-y-3">
-      <a href="mailto:hello@vourel.com" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
+      <a href="mailto:oktofitavinvourel@gmail.com" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 bg-ember/20 rounded-lg flex items-center justify-center text-lg flex-shrink-0">📧</div>
           <div>
             <div class="font-bold text-sm text-chalk">Email</div>
-            <div class="font-mono text-xs text-silver">hello@vourel.com</div>
+            <div class="font-mono text-xs text-silver">oktofitavinvourel@gmail.com</div>
           </div>
         </div>
         <span class="text-lg text-white/20">→</span>
       </a>
 
-      <a href="https://github.com/vourel" target="_blank" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
+      <a href="https://github.com/theplane01" target="_blank" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center text-lg flex-shrink-0">🔗</div>
           <div>
             <div class="font-bold text-sm text-chalk">GitHub</div>
-            <div class="font-mono text-xs text-silver">github.com/vourel</div>
+            <div class="font-mono text-xs text-silver">github.com/theplane01</div>
           </div>
         </div>
         <span class="text-lg text-white/20">→</span>
       </a>
 
-      <a href="https://linkedin.com/in/vourel" target="_blank" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
+      <a href="https://www.linkedin.com/in/vourel-oktofit-729b96337" target="_blank" class="flex items-center justify-between p-4 bg-panel border border-dark-border rounded-2xl active:scale-95 transition-transform">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 bg-glacier/20 rounded-lg flex items-center justify-center text-lg flex-shrink-0">💼</div>
           <div>
             <div class="font-bold text-sm text-chalk">LinkedIn</div>
-            <div class="font-mono text-xs text-silver">linkedin.com/in/vourel</div>
+            <div class="font-mono text-xs text-silver">linkedin.com/in/vourel-oktofit-729b96337</div>
           </div>
         </div>
         <span class="text-lg text-white/20">→</span>
